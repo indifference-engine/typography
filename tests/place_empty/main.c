@@ -30,6 +30,8 @@ int main(const int argc, const char *const *const argv)
   const int number_of_placed_glyphs = place_text(
       font,
       state,
+      BELOW_TEXT_ANCHOR,
+      RIGHT_OF_TEXT_ANCHOR,
       6,
       placed_glyph_indices,
       placed_glyph_rows,
