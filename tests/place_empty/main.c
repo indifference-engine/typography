@@ -19,6 +19,7 @@ int main(const int argc, const char *const *const argv)
   float written_blues[7];
   written_text written = start_text(7, written_text_fonts, written_glyph_indices, written_opacities, written_reds, written_greens, written_blues);
 
+  const text_font *placed_text_fonts[6];
   int placed_glyph_indices[6];
   int placed_glyph_rows[6];
   int placed_glyph_columns[6];
@@ -28,6 +29,7 @@ int main(const int argc, const char *const *const argv)
   float placed_glyph_blues[6];
   placed_text placed = {
       .number_of_placeable_glyphs = 6,
+      .placed_text_fonts = placed_text_fonts,
       .placed_glyph_indices = placed_glyph_indices,
       .placed_glyph_rows = placed_glyph_rows,
       .placed_glyph_columns = placed_glyph_columns,

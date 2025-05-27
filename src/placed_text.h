@@ -21,6 +21,11 @@ typedef struct
   const int number_of_placeable_glyphs;
 
   /**
+   * The text fonts of the code points which have been placed.
+   */
+  const text_font **const placed_text_fonts;
+
+  /**
    * The indices of the glyphs which have been placed.
    */
   int *const placed_glyph_indices;
