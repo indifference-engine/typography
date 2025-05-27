@@ -3,7 +3,7 @@
 #define START_TEXT_H
 
 #include "text_font.h"
-#include "text_state.h"
+#include "written_text.h"
 
 /**
  * Initializes state to start producing an item of text.
@@ -23,7 +23,7 @@
  *                      have been written so far.
  * @return The initialized state.
  */
-text_state start_text(
+written_text start_text(
     const int number_of_writable_code_points,
     const text_font **const written_text_fonts,
     int *const written_glyph_indices,

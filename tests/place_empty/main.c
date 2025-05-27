@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "../../src/text_font.h"
-#include "../../src/text_state.h"
+#include "../../src/written_text.h"
 #include "../../src/start_text.h"
 #include "../../src/place_text.h"
 
@@ -16,7 +16,7 @@ int main(const int argc, const char *const *const argv)
   float written_reds[7];
   float written_greens[7];
   float written_blues[7];
-  text_state state = start_text(7, written_text_fonts, written_glyph_indices, written_opacities, written_reds, written_greens, written_blues);
+  written_text written = start_text(7, written_text_fonts, written_glyph_indices, written_opacities, written_reds, written_greens, written_blues);
 
   const int glyph_widths[] = {23, 18, 19, 25};
   const uint32_t glyph_code_points[] = {505255796, 204668171, 358868195, 402862483};
@@ -34,7 +34,7 @@ int main(const int argc, const char *const *const argv)
   int placed_glyph_columns[6];
   const int number_of_placed_glyphs = place_text(
       font,
-      state,
+      written,
       BELOW_TEXT_ANCHOR,
       RIGHT_OF_TEXT_ANCHOR,
       6,

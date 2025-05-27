@@ -1,7 +1,7 @@
-#include "text_state.h"
+#include "written_text.h"
 #include "start_text.h"
 
-text_state start_text(
+written_text start_text(
     const int number_of_writable_code_points,
     const text_font **const written_text_fonts,
     int *const written_glyph_indices,
@@ -10,7 +10,7 @@ text_state start_text(
     float *const written_greens,
     float *const written_blues)
 {
-  const text_state output = {
+  const written_text output = {
       .number_of_written_code_points = 0,
       .number_of_writable_code_points = number_of_writable_code_points,
       .written_text_fonts = written_text_fonts,

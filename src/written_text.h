@@ -1,6 +1,6 @@
-#ifndef TEXT_STATE_H
+#ifndef WRITTEN_TEXT_H
 
-#define TEXT_STATE_H
+#define WRITTEN_TEXT_H
 
 #include "text_font.h"
 
@@ -51,6 +51,6 @@ typedef struct
    * far.
    */
   float *const written_blues;
-} text_state;
+} written_text;
 
 #endif

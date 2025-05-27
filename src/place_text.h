@@ -3,7 +3,7 @@
 #define PLACE_TEXT_H
 
 #include "text_font.h"
-#include "text_state.h"
+#include "written_text.h"
 
 /**
  * The text is placed below the anchor.
@@ -33,7 +33,7 @@
 /**
  * Calculates final co-ordinates for glyphs within an item of text.
  * @param text_font The font to use.
- * @param text_state The text state to place.
+ * @param written_text The text state to place.
  * @param vertical_alignment The vertical alignment of the text.
  * @param horizontal_alignment The horizontal alignment of the text.
  * @param number_of_placeable_glyphs The maximum number of glyphs which can be
@@ -50,7 +50,7 @@
  */
 int place_text(
     const text_font text_font,
-    const text_state text_state,
+    const written_text written_text,
     const int vertical_alignment,
     const int horizontal_alignment,
     const int number_of_placeable_glyphs,

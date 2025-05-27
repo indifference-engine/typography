@@ -23,10 +23,10 @@ corresponding function available.
 
 ### Types
 
-| Name         | Description                                         |
-| ------------ | --------------------------------------------------- |
-| `text_font`  | A collection of glyphs forming a font.              |
-| `text_state` | State which tracks the creation of an item of text. |
+| Name           | Description                                         |
+| -------------- | --------------------------------------------------- |
+| `text_font`    | A collection of glyphs forming a font.              |
+| `written_text` | State which tracks the creation of an item of text. |
 
 ### Functions
 

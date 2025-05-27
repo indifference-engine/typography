@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "text_font.h"
-#include "text_state.h"
+#include "written_text.h"
 
 /**
  * Appends a code point to an item of text being composed.
@@ -23,7 +23,7 @@
  * @param blue The intensity of the blue channel of the code point.  Behavior is
  *             undefined if NaN, infinity, negative infinity or unable to be
  *             cast to int.
- * @param text_state The state to append to.
+ * @param written_text The state to append to.
  * @return True when the operation succeeds, otherwise, false.
  */
 bool write_text_code_point(
@@ -33,6 +33,6 @@ bool write_text_code_point(
     const float red,
     const float green,
     const float blue,
-    text_state *const text_state);
+    written_text *const written_text);
 
 #endif

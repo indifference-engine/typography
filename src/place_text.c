@@ -1,10 +1,10 @@
 #include "text_font.h"
-#include "text_state.h"
+#include "written_text.h"
 #include "place_text.h"
 
 int place_text(
     const text_font text_font,
-    const text_state text_state,
+    const written_text written_text,
     const int vertical_alignment,
     const int horizontal_alignment,
     const int number_of_placeable_glyphs,
@@ -13,7 +13,7 @@ int place_text(
     int *const placed_glyph_columns)
 {
   (void)(text_font);
-  (void)(text_state);
+  (void)(written_text);
   (void)(vertical_alignment);
   (void)(horizontal_alignment);
   (void)(number_of_placeable_glyphs);
