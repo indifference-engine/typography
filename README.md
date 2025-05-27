@@ -29,10 +29,11 @@ corresponding function available.
 
 ### Types
 
-| Name           | Description                                         |
-| -------------- | --------------------------------------------------- |
-| `text_font`    | A collection of glyphs forming a font.              |
-| `written_text` | State which tracks the creation of an item of text. |
+| Name           | Description                                          |
+| -------------- | ---------------------------------------------------- |
+| `text_font`    | A collection of glyphs forming a font.               |
+| `written_text` | State which tracks the creation of an item of text.  |
+| `placed_text`  | Final coordinates for glyphs within an item of text. |
 
 ### Functions
 

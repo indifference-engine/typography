@@ -2,8 +2,8 @@
 
 #define PLACE_TEXT_H
 
-#include "text_font.h"
 #include "written_text.h"
+#include "placed_text.h"
 
 /**
  * The text is placed below the anchor.
@@ -32,30 +32,19 @@
 
 /**
  * Calculates final co-ordinates for glyphs within an item of text.
- * @param text_font The font to use.
  * @param written_text The text state to place.
  * @param vertical_alignment The vertical alignment of the text.
  * @param horizontal_alignment The horizontal alignment of the text.
- * @param number_of_placeable_glyphs The maximum number of glyphs which can be
- *                                   placed.
- * @param placed_glyph_indices Populated with the indices of the glyphs which
- *                             have been placed when successful.
- * @param placed_glyph_rows Populated with the number of rows that each glyph is
- *                          placed below of the anchor when successful.
- * @param placed_glyph_columns Populated with the number of columns that each
- *                             glyph is placed right of the anchor when
- *                             successful.
+ * @param placed_text The placed text; emptied and written to when the operation
+ *                    succeeds.  Content is undefined when the operation does
+ *                    not succeed.
  * @return The number of placed glyphs when the operation succeeds.  -1 when the
  *         operation does not succeed.
  */
 int place_text(
-    const text_font text_font,
     const written_text written_text,
     const int vertical_alignment,
     const int horizontal_alignment,
-    const int number_of_placeable_glyphs,
-    int *const placed_glyph_indices,
-    int *const placed_glyph_rows,
-    int *const placed_glyph_columns);
+    placed_text *const placed_text);
 
 #endif
