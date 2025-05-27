@@ -64,7 +64,7 @@ int main(const int argc, const char *const *const argv)
     return 1;
   }
 
-  if (!write_text_code_point(358868195, &font_b, 0.1292127857f, 0.3058116156f, 0.5600688226f, 0.6124764171f, &state))
+  if (!write_text_code_point(37498374, &font_b, 0.1292127857f, 0.3058116156f, 0.5600688226f, 0.6124764171f, &state))
   {
     fprintf(stderr, "Unexpectedly failed to write fifth code point.\n");
     return 1;
