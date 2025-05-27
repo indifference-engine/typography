@@ -10,8 +10,13 @@ int main(const int argc, const char *const *const argv)
   (void)(argc);
   (void)(argv);
 
+  const text_font *written_text_fonts[7];
   int written_glyph_indices[7];
-  text_state state = start_text(7, written_glyph_indices);
+  float written_opacities[7];
+  float written_reds[7];
+  float written_greens[7];
+  float written_blues[7];
+  text_state state = start_text(7, written_text_fonts, written_glyph_indices, written_opacities, written_reds, written_greens, written_blues);
 
   const int glyph_widths[] = {23, 18, 19, 25};
   const uint32_t glyph_code_points[] = {505255796, 204668171, 358868195, 402862483};
