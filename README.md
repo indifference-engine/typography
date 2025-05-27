@@ -20,6 +20,12 @@ corresponding function available.
 ### Assumptions
 
 - The compilation environment supports C99.
+- No float arguments:
+  - Are NaN.
+  - Are infinity.
+  - Are negative infinity.
+  - Cannot be cast to `int` without undefined behavior (for example, very large
+    values).
 
 ### Types
 
