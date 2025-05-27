@@ -22,11 +22,19 @@ int main(const int argc, const char *const *const argv)
   int placed_glyph_indices[6];
   int placed_glyph_rows[6];
   int placed_glyph_columns[6];
+  float placed_glyph_opacities[6];
+  float placed_glyph_reds[6];
+  float placed_glyph_greens[6];
+  float placed_glyph_blues[6];
   placed_text placed = {
       .number_of_placeable_glyphs = 6,
       .placed_glyph_indices = placed_glyph_indices,
       .placed_glyph_rows = placed_glyph_rows,
       .placed_glyph_columns = placed_glyph_columns,
+      .placed_glyph_opacities = placed_glyph_opacities,
+      .placed_glyph_reds = placed_glyph_reds,
+      .placed_glyph_greens = placed_glyph_greens,
+      .placed_glyph_blues = placed_glyph_blues,
   };
 
   const int number_of_placed_glyphs = place_text(written, BELOW_TEXT_ANCHOR, RIGHT_OF_TEXT_ANCHOR, &placed);

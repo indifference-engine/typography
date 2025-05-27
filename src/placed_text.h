@@ -34,6 +34,26 @@ typedef struct
    * The number of columns that each glyph is placed right of the anchor.
    */
   int *const placed_glyph_columns;
+
+  /**
+   * The opacity of each placed glyph.
+   */
+  float *const placed_glyph_opacities;
+
+  /**
+   * The red intensity of each placed glyph.
+   */
+  float *const placed_glyph_reds;
+
+  /**
+   * The green intensity of each placed glyph.
+   */
+  float *const placed_glyph_greens;
+
+  /**
+   * The blue intensity of each placed glyph.
+   */
+  float *const placed_glyph_blues;
 } placed_text;
 
 #endif
