@@ -83,7 +83,7 @@ int main(const int argc, const char *const *const argv)
     return 1;
   }
 
-  if (write_text_code_point(358868195, &font_b, 0.4104844575f, 0.1156985448f, 0.8581898866f, 0.7918596686f, &written))
+  if (write_text_new_line(&font_b, &written))
   {
     fprintf(stderr, "Unexpectedly succeeded in writing eighth code point.\n");
     return 1;

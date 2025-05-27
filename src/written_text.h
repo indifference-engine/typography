@@ -25,7 +25,8 @@ typedef struct
   const int number_of_writable_code_points;
 
   /**
-   * Tracks the glyph indices which have been written so far.
+   * Tracks the glyph indices which have been written so far.  -1 indicates a
+   * new-line.
    */
   int *const written_glyph_indices;
 

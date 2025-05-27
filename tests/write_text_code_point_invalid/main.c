@@ -4,6 +4,7 @@
 #include "../../src/written_text.h"
 #include "../../src/start_text.h"
 #include "../../src/write_text_code_point.h"
+#include "../../src/write_text_new_line.h"
 
 int main(const int argc, const char *const *const argv)
 {
@@ -52,7 +53,7 @@ int main(const int argc, const char *const *const argv)
     return 1;
   }
 
-  if (!write_text_code_point(204668171, &font_b, 0.5377511140f, 0.6091213575f, 0.3598658273f, 0.4994471018f, &written))
+  if (!write_text_new_line(&font_b, &written))
   {
     fprintf(stderr, "Unexpectedly failed to write third code point.\n");
     return 1;
