@@ -41,7 +41,7 @@
  * @return The number of placed glyphs when the operation succeeds.  -1 when the
  *         operation does not succeed.
  */
-int place_text(
+int place_text( // TODO: We might not need the return value, it's in the struct.
     const written_text written_text,
     const int vertical_alignment,
     const int horizontal_alignment,
