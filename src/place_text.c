@@ -118,7 +118,7 @@ int place_text(
     return placed_text->number_of_placed_glyphs;
   }
 
-  total_height += height_of_current_line;
+  total_height += (line_spacing_of_previous_line + height_of_previous_line) * number_of_banked_lines;
 
   if (vertical_alignment == CENTERED_ON_TEXT_ANCHOR)
   {
