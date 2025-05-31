@@ -10,7 +10,8 @@
 typedef struct
 {
   /**
-   * The number of code points which have been placed.
+   * The number of code points which have been placed.  -1 when the placement
+   * does not succeed.
    */
   int number_of_placed_glyphs;
 

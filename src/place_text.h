@@ -38,10 +38,8 @@
  * @param placed_text The placed text; emptied and written to when the operation
  *                    succeeds.  Content is undefined when the operation does
  *                    not succeed.
- * @return The number of placed glyphs when the operation succeeds.  -1 when the
- *         operation does not succeed.
  */
-int place_text( // TODO: We might not need the return value, it's in the struct.
+void place_text(
     const written_text written_text,
     const int vertical_alignment,
     const int horizontal_alignment,

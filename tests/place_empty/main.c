@@ -39,11 +39,11 @@ int main(const int argc, const char *const *const argv)
       .placed_glyph_blues = placed_glyph_blues,
   };
 
-  const int number_of_placed_glyphs = place_text(written, BELOW_TEXT_ANCHOR, RIGHT_OF_TEXT_ANCHOR, &placed);
+  place_text(written, BELOW_TEXT_ANCHOR, RIGHT_OF_TEXT_ANCHOR, &placed);
 
-  if (number_of_placed_glyphs != 0)
+  if (placed.number_of_placed_glyphs != 0)
   {
-    fprintf(stderr, "Expected 0 placed glyphs, actual %d.\n", number_of_placed_glyphs);
+    fprintf(stderr, "Expected 0 placed glyphs, actual %d.\n", placed.number_of_placed_glyphs);
     return 1;
   }
 

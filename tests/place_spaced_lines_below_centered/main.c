@@ -120,9 +120,9 @@ int main(const int argc, const char *const *const argv)
       .placed_glyph_blues = placed_glyph_blues,
   };
 
-  const int number_of_placed_glyphs = place_text(written, BELOW_TEXT_ANCHOR, CENTERED_ON_TEXT_ANCHOR, &placed);
+  place_text(written, BELOW_TEXT_ANCHOR, CENTERED_ON_TEXT_ANCHOR, &placed);
 
-  assert_int("placed glyphs", 11, number_of_placed_glyphs);
+  assert_int("placed glyphs", 11, placed.number_of_placed_glyphs);
 
   assert_pointer("placed text font a", &font_a, placed_text_fonts[0]);
   assert_pointer("placed text font b", &font_b, placed_text_fonts[1]);

@@ -70,9 +70,9 @@ int main(const int argc, const char *const *const argv)
       .placed_glyph_blues = placed_glyph_blues,
   };
 
-  const int number_of_placed_glyphs = place_text(written, BELOW_TEXT_ANCHOR, LEFT_OF_TEXT_ANCHOR, &placed);
+  place_text(written, BELOW_TEXT_ANCHOR, LEFT_OF_TEXT_ANCHOR, &placed);
 
-  assert_int("placed glyphs", 0, number_of_placed_glyphs);
+  assert_int("placed glyphs", 0, placed.number_of_placed_glyphs);
 
   return exit_code;
 }

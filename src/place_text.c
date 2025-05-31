@@ -34,7 +34,7 @@ static int end_line(
   return output;
 }
 
-int place_text(
+void place_text(
     const written_text written_text,
     const int vertical_alignment,
     const int horizontal_alignment,
@@ -76,7 +76,8 @@ int place_text(
     {
       if (placed_text->number_of_placed_glyphs == placed_text->number_of_placeable_glyphs)
       {
-        return -1;
+        placed_text->number_of_placed_glyphs = -1;
+        return;
       }
 
       const text_font *const text_font = written_text.written_text_fonts[code_point_index];
@@ -113,22 +114,18 @@ int place_text(
 
   end_line(horizontal_alignment, placed_text, height_of_previous_line, height_of_current_line, line_spacing_of_previous_line, line_spacing_of_current_line, width_of_current_line, index_of_first_glyph_on_current_line, number_of_banked_lines);
 
-  if (vertical_alignment == BELOW_TEXT_ANCHOR)
+  if (vertical_alignment != BELOW_TEXT_ANCHOR)
   {
-    return placed_text->number_of_placed_glyphs;
+    total_height += (line_spacing_of_previous_line + height_of_previous_line) * number_of_banked_lines;
+
+    if (vertical_alignment == CENTERED_ON_TEXT_ANCHOR)
+    {
+      total_height /= 2;
+    }
+
+    for (int glyph_index = 0; glyph_index < placed_text->number_of_placed_glyphs; glyph_index++)
+    {
+      placed_text->placed_glyph_rows[glyph_index] -= total_height;
+    }
   }
-
-  total_height += (line_spacing_of_previous_line + height_of_previous_line) * number_of_banked_lines;
-
-  if (vertical_alignment == CENTERED_ON_TEXT_ANCHOR)
-  {
-    total_height /= 2;
-  }
-
-  for (int glyph_index = 0; glyph_index < placed_text->number_of_placed_glyphs; glyph_index++)
-  {
-    placed_text->placed_glyph_rows[glyph_index] -= total_height;
-  }
-
-  return placed_text->number_of_placed_glyphs;
 }
