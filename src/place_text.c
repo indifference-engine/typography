@@ -3,7 +3,7 @@
 #include "placed_text.h"
 #include "place_text.h"
 
-static void apply_horizontal_alignment_to_placed_text(
+static void end_line(
     const int horizontal_alignment,
     placed_text *const placed_text,
     const int width_of_current_line,
@@ -47,7 +47,7 @@ int place_text(
 
     if (written_text.written_glyph_indices[code_point_index] == -1)
     {
-      apply_horizontal_alignment_to_placed_text(horizontal_alignment, placed_text, width_of_current_line, height_of_current_line, index_of_first_glyph_on_current_line);
+      end_line(horizontal_alignment, placed_text, width_of_current_line, height_of_current_line, index_of_first_glyph_on_current_line);
 
       total_height += height_of_current_line > text_font->line_height ? height_of_current_line : text_font->line_height;
       total_height += line_spacing_of_current_line > text_font->line_spacing ? line_spacing_of_current_line : text_font->line_spacing;
@@ -95,7 +95,7 @@ int place_text(
     }
   }
 
-  apply_horizontal_alignment_to_placed_text(horizontal_alignment, placed_text, width_of_current_line, height_of_current_line, index_of_first_glyph_on_current_line);
+  end_line(horizontal_alignment, placed_text, width_of_current_line, height_of_current_line, index_of_first_glyph_on_current_line);
 
   if (vertical_alignment == BELOW_TEXT_ANCHOR)
   {
