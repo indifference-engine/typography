@@ -148,17 +148,17 @@ int main(const int argc, const char *const *const argv)
   assert_int("placed glyph index j", 2, placed_glyph_indices[9]);
   assert_int("placed glyph index k", 0, placed_glyph_indices[10]);
 
-  assert_int("placed glyph row a", 131 - 288, placed_glyph_rows[0]);
-  assert_int("placed glyph row b", 126 - 288, placed_glyph_rows[1]);
-  assert_int("placed glyph row c", 126 - 288, placed_glyph_rows[2]);
-  assert_int("placed glyph row d", 210 - 288, placed_glyph_rows[3]);
-  assert_int("placed glyph row e", 215 - 288, placed_glyph_rows[4]);
-  assert_int("placed glyph row f", 215 - 288, placed_glyph_rows[5]);
-  assert_int("placed glyph row g", 252 - 288, placed_glyph_rows[6]);
-  assert_int("placed glyph row h", 252 - 288, placed_glyph_rows[7]);
-  assert_int("placed glyph row i", 312 - 288, placed_glyph_rows[8]);
-  assert_int("placed glyph row j", 349 - 288, placed_glyph_rows[9]);
-  assert_int("placed glyph row k", 354 - 288, placed_glyph_rows[10]);
+  assert_int("placed glyph row a", -157, placed_glyph_rows[0]);
+  assert_int("placed glyph row b", -162, placed_glyph_rows[1]);
+  assert_int("placed glyph row c", -162, placed_glyph_rows[2]);
+  assert_int("placed glyph row d", -78, placed_glyph_rows[3]);
+  assert_int("placed glyph row e", -73, placed_glyph_rows[4]);
+  assert_int("placed glyph row f", -73, placed_glyph_rows[5]);
+  assert_int("placed glyph row g", -36, placed_glyph_rows[6]);
+  assert_int("placed glyph row h", -36, placed_glyph_rows[7]);
+  assert_int("placed glyph row i", 24, placed_glyph_rows[8]);
+  assert_int("placed glyph row j", 61, placed_glyph_rows[9]);
+  assert_int("placed glyph row k", 66, placed_glyph_rows[10]);
 
   assert_int("placed glyph column a", -199, placed_glyph_columns[0]);
   assert_int("placed glyph column b", -140, placed_glyph_columns[1]);
