@@ -86,7 +86,7 @@ int main(const int argc, const char *const *const argv)
       .placed_glyph_blues = placed_glyph_blues,
   };
 
-  place_text(written, BELOW_TEXT_ANCHOR, RIGHT_OF_TEXT_ANCHOR, &placed);
+  place_text(written, BELOW_TEXT_ANCHOR, RIGHT_OF_TEXT_ANCHOR, 1000, -2000, &placed);
 
   assert_int("placed glyphs", -1, placed.number_of_placed_glyphs);
 

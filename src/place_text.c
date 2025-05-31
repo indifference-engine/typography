@@ -38,6 +38,8 @@ void place_text(
     const written_text written_text,
     const int vertical_alignment,
     const int horizontal_alignment,
+    const int row,
+    const int column,
     placed_text *const placed_text)
 {
   int total_height = 0;
@@ -89,8 +91,8 @@ void place_text(
         width_of_current_line += text_font->code_point_spacing > code_point_spacing_of_previous_character ? text_font->code_point_spacing : code_point_spacing_of_previous_character;
       }
 
-      placed_text->placed_glyph_columns[placed_text->number_of_placed_glyphs] = width_of_current_line;
-      placed_text->placed_glyph_rows[placed_text->number_of_placed_glyphs] = total_height + text_font->glyph_row_offsets[glyph_index];
+      placed_text->placed_glyph_columns[placed_text->number_of_placed_glyphs] = width_of_current_line + column;
+      placed_text->placed_glyph_rows[placed_text->number_of_placed_glyphs] = total_height + text_font->glyph_row_offsets[glyph_index] + row;
       placed_text->placed_text_fonts[placed_text->number_of_placed_glyphs] = written_text.written_text_fonts[code_point_index];
       placed_text->placed_glyph_indices[placed_text->number_of_placed_glyphs] = glyph_index;
       placed_text->placed_glyph_opacities[placed_text->number_of_placed_glyphs] = written_text.written_opacities[code_point_index];

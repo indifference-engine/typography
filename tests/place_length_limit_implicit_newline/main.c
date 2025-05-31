@@ -104,7 +104,7 @@ int main(const int argc, const char *const *const argv)
       .placed_glyph_blues = placed_glyph_blues,
   };
 
-  place_text(written, BELOW_TEXT_ANCHOR, RIGHT_OF_TEXT_ANCHOR, &placed);
+  place_text(written, BELOW_TEXT_ANCHOR, RIGHT_OF_TEXT_ANCHOR, 1000, -2000, &placed);
 
   assert_int("placed glyphs", 6, placed.number_of_placed_glyphs);
 
@@ -122,19 +122,19 @@ int main(const int argc, const char *const *const argv)
   assert_int("placed glyph index e", 0, placed_glyph_indices[4]);
   assert_int("placed glyph index f", 1, placed_glyph_indices[5]);
 
-  assert_int("placed glyph row a", -2, placed_glyph_rows[0]);
-  assert_int("placed glyph row b", 9, placed_glyph_rows[1]);
-  assert_int("placed glyph row c", 3, placed_glyph_rows[2]);
-  assert_int("placed glyph row d", 40, placed_glyph_rows[3]);
-  assert_int("placed glyph row e", 52, placed_glyph_rows[4]);
-  assert_int("placed glyph row f", 40, placed_glyph_rows[5]);
+  assert_int("placed glyph row a", 998, placed_glyph_rows[0]);
+  assert_int("placed glyph row b", 1009, placed_glyph_rows[1]);
+  assert_int("placed glyph row c", 1003, placed_glyph_rows[2]);
+  assert_int("placed glyph row d", 1040, placed_glyph_rows[3]);
+  assert_int("placed glyph row e", 1052, placed_glyph_rows[4]);
+  assert_int("placed glyph row f", 1040, placed_glyph_rows[5]);
 
-  assert_int("placed glyph column a", 0, placed_glyph_columns[0]);
-  assert_int("placed glyph column b", 59, placed_glyph_columns[1]);
-  assert_int("placed glyph column c", 149, placed_glyph_columns[2]);
-  assert_int("placed glyph column d", 0, placed_glyph_columns[3]);
-  assert_int("placed glyph column e", 78, placed_glyph_columns[4]);
-  assert_int("placed glyph column f", 106, placed_glyph_columns[5]);
+  assert_int("placed glyph column a", -2000, placed_glyph_columns[0]);
+  assert_int("placed glyph column b", -1941, placed_glyph_columns[1]);
+  assert_int("placed glyph column c", -1851, placed_glyph_columns[2]);
+  assert_int("placed glyph column d", -2000, placed_glyph_columns[3]);
+  assert_int("placed glyph column e", -1922, placed_glyph_columns[4]);
+  assert_int("placed glyph column f", -1894, placed_glyph_columns[5]);
 
   assert_float("placed glyph opacity a", 0.1564262168f, placed_glyph_opacities[0]);
   assert_float("placed glyph opacity b", 0.3664873978f, placed_glyph_opacities[1]);
