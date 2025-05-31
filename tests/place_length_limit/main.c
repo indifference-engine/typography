@@ -19,6 +19,15 @@ static void assert_int(const char *const description, const int expected, const 
   }
 }
 
+static void assert_float(const char *const description, const float expected, const float actual)
+{
+  if (expected != actual)
+  {
+    fprintf(stderr, "Expected %f %s, actual %f.\n", expected, description, actual);
+    exit_code = 1;
+  }
+}
+
 static void assert_pointer(const char *const description, const void *const expected, const void *const actual)
 {
   if (expected != actual)
@@ -123,33 +132,33 @@ int main(const int argc, const char *const *const argv)
   assert_int("placed glyph column e", 78, placed_glyph_columns[4]);
   assert_int("placed glyph column f", 106, placed_glyph_columns[5]);
 
-  assert_int("placed glyph opacity a", 0.1564262168f, placed_glyph_opacities[0]);
-  assert_int("placed glyph opacity b", 0.3664873978f, placed_glyph_opacities[1]);
-  assert_int("placed glyph opacity c", 0.5377511140f, placed_glyph_opacities[2]);
-  assert_int("placed glyph opacity d", 0.1292127857f, placed_glyph_opacities[3]);
-  assert_int("placed glyph opacity e", 0.0826451742f, placed_glyph_opacities[4]);
-  assert_int("placed glyph opacity f", 0.6479530738f, placed_glyph_opacities[5]);
+  assert_float("placed glyph opacity a", 0.1564262168f, placed_glyph_opacities[0]);
+  assert_float("placed glyph opacity b", 0.3664873978f, placed_glyph_opacities[1]);
+  assert_float("placed glyph opacity c", 0.5377511140f, placed_glyph_opacities[2]);
+  assert_float("placed glyph opacity d", 0.1292127857f, placed_glyph_opacities[3]);
+  assert_float("placed glyph opacity e", 0.0826451742f, placed_glyph_opacities[4]);
+  assert_float("placed glyph opacity f", 0.6479530738f, placed_glyph_opacities[5]);
 
-  assert_int("placed glyph red a", 0.0437286089f, placed_glyph_reds[0]);
-  assert_int("placed glyph red b", 0.8843461135f, placed_glyph_reds[1]);
-  assert_int("placed glyph red c", 0.6091213575f, placed_glyph_reds[2]);
-  assert_int("placed glyph red d", 0.3058116156f, placed_glyph_reds[3]);
-  assert_int("placed glyph red e", 0.7329012169f, placed_glyph_reds[4]);
-  assert_int("placed glyph red f", 0.2324556519f, placed_glyph_reds[5]);
+  assert_float("placed glyph red a", 0.0437286089f, placed_glyph_reds[0]);
+  assert_float("placed glyph red b", 0.8843461135f, placed_glyph_reds[1]);
+  assert_float("placed glyph red c", 0.6091213575f, placed_glyph_reds[2]);
+  assert_float("placed glyph red d", 0.3058116156f, placed_glyph_reds[3]);
+  assert_float("placed glyph red e", 0.7329012169f, placed_glyph_reds[4]);
+  assert_float("placed glyph red f", 0.2324556519f, placed_glyph_reds[5]);
 
-  assert_int("placed glyph green a", 0.2452098142f, placed_glyph_greens[0]);
-  assert_int("placed glyph green b", 0.0204608919f, placed_glyph_greens[1]);
-  assert_int("placed glyph green c", 0.3598658273f, placed_glyph_greens[2]);
-  assert_int("placed glyph green d", 0.5600688226f, placed_glyph_greens[3]);
-  assert_int("placed glyph green e", 0.3891597672f, placed_glyph_greens[4]);
-  assert_int("placed glyph green f", 0.6618752571f, placed_glyph_greens[5]);
+  assert_float("placed glyph green a", 0.2452098142f, placed_glyph_greens[0]);
+  assert_float("placed glyph green b", 0.0204608919f, placed_glyph_greens[1]);
+  assert_float("placed glyph green c", 0.3598658273f, placed_glyph_greens[2]);
+  assert_float("placed glyph green d", 0.5600688226f, placed_glyph_greens[3]);
+  assert_float("placed glyph green e", 0.3891597672f, placed_glyph_greens[4]);
+  assert_float("placed glyph green f", 0.6618752571f, placed_glyph_greens[5]);
 
-  assert_int("placed glyph blue a", 0.4578030974f, placed_glyph_blues[0]);
-  assert_int("placed glyph blue b", 0.8177569126f, placed_glyph_blues[1]);
-  assert_int("placed glyph blue c", 0.4994471018f, placed_glyph_blues[2]);
-  assert_int("placed glyph blue d", 0.6124764171f, placed_glyph_blues[3]);
-  assert_int("placed glyph blue e", 0.3621127009f, placed_glyph_blues[4]);
-  assert_int("placed glyph blue f", 0.2592586932f, placed_glyph_blues[5]);
+  assert_float("placed glyph blue a", 0.4578030974f, placed_glyph_blues[0]);
+  assert_float("placed glyph blue b", 0.8177569126f, placed_glyph_blues[1]);
+  assert_float("placed glyph blue c", 0.4994471018f, placed_glyph_blues[2]);
+  assert_float("placed glyph blue d", 0.6124764171f, placed_glyph_blues[3]);
+  assert_float("placed glyph blue e", 0.3621127009f, placed_glyph_blues[4]);
+  assert_float("placed glyph blue f", 0.2592586932f, placed_glyph_blues[5]);
 
   return exit_code;
 }
