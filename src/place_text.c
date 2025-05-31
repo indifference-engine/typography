@@ -52,7 +52,9 @@ void place_text(
 
   for (int code_point_index = 0; code_point_index < written_text.number_of_written_code_points; code_point_index++)
   {
-    if (written_text.written_glyph_indices[code_point_index] == -1)
+    const int glyph_index = written_text.written_glyph_indices[code_point_index];
+
+    if (glyph_index == -1)
     {
       if (index_of_first_glyph_on_current_line == placed_text->number_of_placed_glyphs)
       {
@@ -88,9 +90,9 @@ void place_text(
       }
 
       placed_text->placed_glyph_columns[placed_text->number_of_placed_glyphs] = width_of_current_line;
-      placed_text->placed_glyph_rows[placed_text->number_of_placed_glyphs] = total_height;
+      placed_text->placed_glyph_rows[placed_text->number_of_placed_glyphs] = total_height + text_font->glyph_row_offsets[glyph_index];
       placed_text->placed_text_fonts[placed_text->number_of_placed_glyphs] = written_text.written_text_fonts[code_point_index];
-      placed_text->placed_glyph_indices[placed_text->number_of_placed_glyphs] = written_text.written_glyph_indices[code_point_index];
+      placed_text->placed_glyph_indices[placed_text->number_of_placed_glyphs] = glyph_index;
       placed_text->placed_glyph_opacities[placed_text->number_of_placed_glyphs] = written_text.written_opacities[code_point_index];
       placed_text->placed_glyph_reds[placed_text->number_of_placed_glyphs] = written_text.written_reds[code_point_index];
       placed_text->placed_glyph_greens[placed_text->number_of_placed_glyphs] = written_text.written_greens[code_point_index];
@@ -98,7 +100,7 @@ void place_text(
       placed_text->number_of_placed_glyphs++;
 
       code_point_spacing_of_previous_character = text_font->code_point_spacing;
-      width_of_current_line += text_font->glyph_widths[written_text.written_glyph_indices[code_point_index]];
+      width_of_current_line += text_font->glyph_widths[glyph_index];
 
       if (text_font->line_height > height_of_current_line)
       {

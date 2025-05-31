@@ -52,6 +52,7 @@ int main(const int argc, const char *const *const argv)
 
   const int glyph_widths_a[] = {23, 18, 19, 25};
   const uint32_t glyph_code_points_a[] = {505255796, 204668171, 358868195, 402862483};
+  const int glyph_row_offsets_a[] = {5, -7, 8, 2};
 
   const text_font font_a = {
       .code_point_spacing = 5,
@@ -59,6 +60,7 @@ int main(const int argc, const char *const *const argv)
       .line_height = 12,
       .glyph_widths = glyph_widths_a,
       .glyph_code_points = glyph_code_points_a,
+      .glyph_row_offsets = glyph_row_offsets_a,
       .number_of_glyphs = 4};
 
   uint32_t code_points[] = {204668171, 505255796, 204668171, 10, 358868195, 505255796, 204668171, 0};
@@ -107,12 +109,12 @@ int main(const int argc, const char *const *const argv)
   assert_int("placed glyph index e", 0, placed_glyph_indices[4]);
   assert_int("placed glyph index f", 1, placed_glyph_indices[5]);
 
-  assert_int("placed glyph row a", 0, placed_glyph_rows[0]);
-  assert_int("placed glyph row b", 0, placed_glyph_rows[1]);
-  assert_int("placed glyph row c", 0, placed_glyph_rows[2]);
-  assert_int("placed glyph row d", 15, placed_glyph_rows[3]);
-  assert_int("placed glyph row e", 15, placed_glyph_rows[4]);
-  assert_int("placed glyph row f", 15, placed_glyph_rows[5]);
+  assert_int("placed glyph row a", -7, placed_glyph_rows[0]);
+  assert_int("placed glyph row b", 5, placed_glyph_rows[1]);
+  assert_int("placed glyph row c", -7, placed_glyph_rows[2]);
+  assert_int("placed glyph row d", 23, placed_glyph_rows[3]);
+  assert_int("placed glyph row e", 20, placed_glyph_rows[4]);
+  assert_int("placed glyph row f", 8, placed_glyph_rows[5]);
 
   assert_int("placed glyph column a", 0, placed_glyph_columns[0]);
   assert_int("placed glyph column b", 23, placed_glyph_columns[1]);

@@ -36,6 +36,11 @@ typedef struct
   const uint32_t *const glyph_code_points;
 
   /**
+   * The additional rows added to the positions of the glyphs.
+   */
+  const int *const glyph_row_offsets;
+
+  /**
    * THe number of glyphs.
    */
   const int number_of_glyphs;
