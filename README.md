@@ -37,12 +37,13 @@ corresponding function available.
 
 ### Functions
 
-| Name                    | Description                                                      |
-| ----------------------- | ---------------------------------------------------------------- |
-| `start_text`            | Initializes state to start producing an item of text.            |
-| `write_text_code_point` | Appends a code point to an item of text being composed.          |
-| `write_text_new_line`   | Appends a new-line character to an item of text being composed.  |
-| `place_text`            | Calculates final co-ordinates for glyphs within an item of text. |
+| Name                     | Description                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+| `start_text`             | Initializes state to start producing an item of text.                                |
+| `write_text_code_point`  | Appends a code point to an item of text being composed.                              |
+| `write_text_code_points` | Appends a null-terminated sequence of code points to an item of text being composed. |
+| `write_text_new_line`    | Appends a new-line character to an item of text being composed.                      |
+| `place_text`             | Calculates final co-ordinates for glyphs within an item of text.                     |
 
 ## Tests
 
