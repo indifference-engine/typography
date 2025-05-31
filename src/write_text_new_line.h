@@ -8,13 +8,10 @@
 
 /**
  * Appends a new-line character to an item of text being composed.
- * @param text_font The font to use.
  * @param written_text The state to append to.  Not modified unless the
  *                     operation succeeds.
  * @return True when the operation succeeds, otherwise, false.
  */
-bool write_text_new_line(
-    const text_font *const text_font,
-    written_text *const written_text);
+bool write_text_new_line(written_text *const written_text);
 
 #endif

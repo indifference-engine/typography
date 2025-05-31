@@ -53,7 +53,7 @@ int main(const int argc, const char *const *const argv)
     return 1;
   }
 
-  if (!write_text_new_line(&font_b, &written))
+  if (!write_text_new_line(&written))
   {
     fprintf(stderr, "Unexpectedly failed to write third code point.\n");
     return 1;

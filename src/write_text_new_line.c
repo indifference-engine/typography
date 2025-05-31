@@ -3,9 +3,7 @@
 #include "write_text_code_point.h"
 #include "write_text_new_line.h"
 
-bool write_text_new_line(
-    const text_font *const text_font,
-    written_text *const written_text)
+bool write_text_new_line(written_text *const written_text)
 {
   const int number_of_written_code_points = written_text->number_of_written_code_points;
 
@@ -14,7 +12,6 @@ bool write_text_new_line(
     return false;
   }
 
-  written_text->written_text_fonts[number_of_written_code_points] = text_font;
   written_text->written_glyph_indices[number_of_written_code_points] = -1;
   written_text->number_of_written_code_points = number_of_written_code_points + 1;
   return true;

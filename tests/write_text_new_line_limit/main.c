@@ -59,7 +59,7 @@ int main(const int argc, const char *const *const argv)
     return 1;
   }
 
-  if (!write_text_new_line(&font_a, &written))
+  if (!write_text_new_line(&written))
   {
     fprintf(stderr, "Unexpectedly failed to write fourth code point.\n");
     return 1;
@@ -83,7 +83,7 @@ int main(const int argc, const char *const *const argv)
     return 1;
   }
 
-  if (write_text_new_line(&font_b, &written))
+  if (write_text_new_line(&written))
   {
     fprintf(stderr, "Unexpectedly succeeded in writing eighth code point.\n");
     return 1;

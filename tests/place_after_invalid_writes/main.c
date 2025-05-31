@@ -76,13 +76,13 @@ int main(const int argc, const char *const *const argv)
   write_text_code_point(505255796, &font_b, 0.3664873978f, 0.8843461135f, 0.0204608919f, 0.8177569126f, &written);
   write_text_code_point(34237424, &font_b, 0.6677278059f, 0.9865281769f, 0.2608366207f, 0.0418208427f, &written);
   write_text_code_point(204668171, &font_b, 0.5377511140f, 0.6091213575f, 0.3598658273f, 0.4994471018f, &written);
-  write_text_new_line(&font_a, &written);
+  write_text_new_line(&written);
   write_text_code_point(37498374, &font_b, 0.1292127857f, 0.3058116156f, 0.5600688226f, 0.6124764171f, &written);
   write_text_code_point(505255796, &font_a, 0.0826451742f, 0.7329012169f, 0.3891597672f, 0.3621127009f, &written);
   write_text_code_point(204668171, &font_a, 0.6479530738f, 0.2324556519f, 0.6618752571f, 0.2592586932f, &written);
 
   write_text_code_point(402862483, &font_a, 0.9260862572f, 0.8178702116f, 0.1523708842f, 0.1551408989f, &written);
-  write_text_new_line(&font_a, &written);
+  write_text_new_line(&written);
   write_text_code_point(204668171, &font_a, 0.0456837164f, 0.3772498624f, 0.9983704513f, 0.4452773849f, &written);
 
   const text_font *placed_text_fonts[6];
