@@ -9,7 +9,8 @@
 
 /**
  * Appends a code point to an item of text being composed.
- * @param code_point The UTF-32 code point to append.
+ * @param code_point The UTF-32 code point to append.  LF/0A/10 is passed to
+ *                   write_text_new_line.
  * @param text_font The font to use.
  * @param opacity The opacity of the code point, where 0 is fully transparent
  *                and 1 is fully opaque.  Behavior for values outside this

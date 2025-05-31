@@ -87,7 +87,7 @@ int main(const int argc, const char *const *const argv)
   write_text_code_point(505255796, &font_a, 0.3675602343f, 0.7996827598f, 0.3451825441f, 0.9147162815f, &written);
   write_text_code_point(204668171, &font_a, 0.2773437981f, 0.2373427736f, 0.4793238467f, 0.0459671612f, &written);
   write_text_new_line(&written);
-  write_text_new_line(&written);
+  write_text_code_point(10, &font_b, 0.4812841226f, 0.0778433944f, 0.1728721638f, 0.6958691477f, &written);
   write_text_new_line(&written);
   write_text_new_line(&written);
   write_text_code_point(505255796, &font_a, 0.2505802000f, 0.0866405098f, 0.6444550980f, 0.0194627529f, &written);

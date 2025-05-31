@@ -83,6 +83,7 @@ int main(const int argc, const char *const *const argv)
 
   write_text_code_point(402862483, &font_a, 0.9260862572f, 0.8178702116f, 0.1523708842f, 0.1551408989f, &written);
   write_text_new_line(&written);
+  write_text_code_point(10, &font_b, 0.4812841226f, 0.0778433944f, 0.1728721638f, 0.6958691477f, &written);
   write_text_code_point(204668171, &font_a, 0.0456837164f, 0.3772498624f, 0.9983704513f, 0.4452773849f, &written);
 
   const text_font *placed_text_fonts[6];

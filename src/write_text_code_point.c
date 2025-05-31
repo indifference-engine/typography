@@ -3,6 +3,7 @@
 #include "text_font.h"
 #include "written_text.h"
 #include "write_text_code_point.h"
+#include "write_text_new_line.h"
 
 bool write_text_code_point(
     const uint32_t code_point,
@@ -13,6 +14,11 @@ bool write_text_code_point(
     const float blue,
     written_text *const written_text)
 {
+  if (code_point == 10)
+  {
+    return write_text_new_line(written_text);
+  }
+
   const int number_of_written_code_points = written_text->number_of_written_code_points;
 
   if (number_of_written_code_points == written_text->number_of_writable_code_points)
