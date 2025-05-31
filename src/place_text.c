@@ -14,11 +14,11 @@ static int end_line(
     const int index_of_first_glyph_on_current_line,
     const int number_of_banked_lines)
 {
-  const int offset = height_of_current_line + (line_spacing_of_previous_line > line_spacing_of_current_line ? line_spacing_of_previous_line : line_spacing_of_current_line) * number_of_banked_lines + (number_of_banked_lines == 0 ? 0 : (height_of_previous_line > height_of_current_line ? height_of_previous_line : height_of_current_line) * (number_of_banked_lines - 1));
+  const int output = height_of_current_line + (line_spacing_of_previous_line > line_spacing_of_current_line ? line_spacing_of_previous_line : line_spacing_of_current_line) * number_of_banked_lines + (height_of_previous_line > height_of_current_line ? height_of_previous_line : height_of_current_line) * (index_of_first_glyph_on_current_line == 0 ? number_of_banked_lines : number_of_banked_lines - 1);
 
   for (int glyph_index = index_of_first_glyph_on_current_line; glyph_index < placed_text->number_of_placed_glyphs; glyph_index++)
   {
-    placed_text->placed_glyph_rows[glyph_index] += offset - placed_text->placed_text_fonts[glyph_index]->line_height;
+    placed_text->placed_glyph_rows[glyph_index] += output - placed_text->placed_text_fonts[glyph_index]->line_height;
   }
 
   if (horizontal_alignment != RIGHT_OF_TEXT_ANCHOR)
@@ -31,7 +31,7 @@ static int end_line(
     }
   }
 
-  return offset;
+  return output;
 }
 
 int place_text(
