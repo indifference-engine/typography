@@ -1,4 +1,4 @@
-# Math
+# Typography
 
 C library for simple text layout.
 
