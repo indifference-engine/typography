@@ -68,7 +68,7 @@ int main(const int argc, const char *const *const argv)
   if (!write_text_code_points(code_points, &font_a, 0.1564262168f, 0.0437286089f, 0.2452098142f, 0.4578030974f, &written))
   {
     fprintf(stderr, "Unexpectedly failed to write code points.\n");
-    exit_code = 0;
+    exit_code = 1;
   }
 
   const text_font *placed_text_fonts[6];
