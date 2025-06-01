@@ -25,8 +25,8 @@
  * @param blue The intensity of the blue channel of the code point.  Behavior is
  *             undefined if NaN, infinity, negative infinity or unable to be
  *             cast to int.
- * @param written_text The state to append to.  Not modified unless the
- *                     operation succeeds.
+ * @param written_text The state to append to.  Some code points may be appended
+ *                     even if the operation does not succeed.
  * @return True when the operation succeeds, otherwise, false.
  */
 bool write_text_code_points(
