@@ -64,6 +64,8 @@ int measure_text_height(const written_text written_text)
       total_height += number_of_banked_lines * line_spacing_of_previous_line;
       total_height += number_of_banked_lines * height_of_previous_line;
     }
+  } else {
+    total_height += height_of_current_line;
   }
 
   return total_height;
