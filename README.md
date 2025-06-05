@@ -45,6 +45,7 @@ corresponding function available.
 | `write_text_int`         | Appends an integer to an item of text being composed.                                                  |
 | `write_text_new_line`    | Appends a new-line character to an item of text being composed.                                        |
 | `wrap_text`              | Replaces space characters with newline characters to fit previously written text within a given width. |
+| `measure_text_height`    | Determines the height of previously written text.                                                      |
 | `place_text`             | Calculates final co-ordinates for glyphs within an item of text.                                       |
 
 ## Tests
