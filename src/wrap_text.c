@@ -36,7 +36,7 @@ void wrap_text(const int width, written_text *const written_text) {
             written_text->written_glyph_indices[index - number_of_code_points_in_current_word - 1] = -1;
             width_of_current_line = width_of_current_word + applicable_glyph_spacing + glyph_width;
           } else {
-            width_of_current_line += width_of_current_word + applicable_glyph_spacing + glyph_width;
+            width_of_current_line += spacing_between_beginning_of_word_and_preceding_white_space + width_of_current_word + applicable_glyph_spacing + glyph_width;
           }
 
           number_of_code_points_in_current_word = 0;
