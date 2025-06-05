@@ -109,6 +109,9 @@ int main(const int argc, const char *const *const argv)
   checked_write_code_point(&text_font_b, 32, &written_text);
   checked_write_code_point(&text_font_b, 7729145, &written_text);
   checked_write_code_point(&text_font_a, 2294, &written_text);
+  checked_write_code_point(&text_font_b, 32, &written_text);
+  checked_write_code_point(&text_font_b, 32, &written_text);
+  checked_write_code_point(&text_font_b, 32, &written_text);
 
   wrap_text(129, &written_text);
 
@@ -134,7 +137,7 @@ int main(const int argc, const char *const *const argv)
 
   place_text(written_text, BELOW_TEXT_ANCHOR, RIGHT_OF_TEXT_ANCHOR, 0, 0, &placed_text);
 
-  assert_int("number of placed glyphs", 13, placed_text.number_of_placed_glyphs);
+  assert_int("number of placed glyphs", 16, placed_text.number_of_placed_glyphs);
   check_placed(placed_text, 0, &text_font_a, 2294, 0, 0);
   check_placed(placed_text, 1, &text_font_b, 32, 0, 9);
   check_placed(placed_text, 2, &text_font_b, 7729145, 0, 14);
@@ -148,6 +151,9 @@ int main(const int argc, const char *const *const argv)
   check_placed(placed_text, 10, &text_font_b, 32, 0, 108);
   check_placed(placed_text, 11, &text_font_b, 7729145, 10, 0);
   check_placed(placed_text, 12, &text_font_a, 2294, 10, 11);
+  check_placed(placed_text, 13, &text_font_b, 32, 10, 20);
+  check_placed(placed_text, 14, &text_font_b, 32, 10, 25);
+  check_placed(placed_text, 15, &text_font_b, 32, 10, 30);
 
   return exit_code;
 }
