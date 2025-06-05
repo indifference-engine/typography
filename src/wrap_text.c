@@ -63,6 +63,8 @@ void wrap_text(const int width, written_text *const written_text) {
         } else {
           width_of_current_word += applicable_glyph_spacing + glyph_width;
         }
+
+        previous_code_point_spacing = code_point_spacing;
       }
     }
   }
